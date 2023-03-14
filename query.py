@@ -12,10 +12,11 @@ api_key = os.environ.get("API_KEY")
 api_secret = os.environ.get("SECRET_KEY")
 client=Client(api_key,api_secret)
 
-interest = client.futures_open_interest_hist(symbol='BTCUSDT', period='15m')
+interest = client.futures_open_interest_hist(symbol='BTCUSDT', period='1d')
 df=pd.DataFrame(interest)
-df=df.set_index("timestamp")
+# df=df.set_index("timestamp")
 df["sumOpenInterest"]=df["sumOpenInterest"].astype("float")
 df["sumOpenInterestValue"]=df["sumOpenInterestValue"].astype("float")
+df["timestamp"]=[datetime.fromtimestamp(x).strftime("%x %X") for x in df["timestamp"].values/1000]
 # df.index=datetime.utcfromtimestamp(df.index.values).strftime('%Y-%m-%d %H:%M:%S')
 print(df)

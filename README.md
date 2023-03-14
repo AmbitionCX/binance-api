@@ -13,4 +13,5 @@ SECRET_KEY=<your_secret_key>
 ## Execute
 ```shell
 pip install python-binance python-dotenv
+python3 query.py
 ```
