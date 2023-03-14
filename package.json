@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@binance/connector": "^2.0.1",
-    "dotenv": "^16.0.3"
-  }
-}

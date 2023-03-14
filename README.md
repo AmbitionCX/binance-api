@@ -12,6 +12,5 @@ SECRET_KEY=<your_secret_key>
 
 ## Execute
 ```shell
-npm install
-node query-rest.js
+pip install python-binance python-dotenv
 ```
